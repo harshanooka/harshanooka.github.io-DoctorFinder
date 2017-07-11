@@ -3,33 +3,69 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
 </head>
 <body ng-app="similarDoctorsApp">
 
-    <div ng-controller="homeController as homeVm">
-        <div class="browse-doctors">
-            <input type="text" placeholder="enter speciality, doctor name" ng-model="homeVm.searchDoc">
-            <input type="text" placeholder="enter location" ng-model="homeVm.searchLocation">
-            <select name="singleSelect" ng-model="homeVm.rating">
-                <option value="" ng-disabled=true>Rating</option>
-                <option value="threeandhalf">3.5+</option>
-                <option value="four">4+</option>
-                <option value="fourandhalf">4.5+</option>
-            </select>
-        </div>
-        <button ng-href="/doctors" ng-click="homeVm.clearFilters()">Clear All filters</button>
-        <div class="results">
-            <div ng-repeat="doctor in homeVm.doctorsList | filter: homeVm.filterDoctor()"
-                 ng-show="homeVm.searchDoc.length > 0 || homeVm.searchLocation.length > 0 || homeVm.rating.length > 0">
-                <a>{{doctor.name}}</a>
+    <div class="home-container" ng-controller="homeController as homeVm">
+        <div class="container">
+            <div class="browse-home" ng-if="homeVm.showBrowse">
+                <div class="browse-doctors row form-group">
+                    <div class="col-md-5">
+                        <label>Doctor Name, Speciality, Title</label>
+                        <input class="form-control" type="text" placeholder="enter speciality, doctor name" ng-model="homeVm.searchDoc">
+                    </div>
+                    <div class="col-md-3">
+                        <label>Location</label>
+                        <input class="form-control" type="text" placeholder="enter location" ng-model="homeVm.searchLocation">
+                    </div>
+                    <div class="col-md-2">
+                        <label for="singleSelect">Sort by Rating</label>
+                        <select class="form-control" name="singleSelect" ng-model="homeVm.rating">
+                            <option value=3.5>3.5+</option>
+                            <option value=4>4+</option>
+                            <option value=4.5>4.5+</option>
+                        </select>
+                    </div>
+                    <div class="col-md-2">
+                        <button class="clear-filters-btn btn btn-primary" ng-href="/doctors" ng-click="homeVm.clearFilters()">Clear All filters</button>
+                    </div>
+                </div>
+                <div class="results row">
+                    <div class="results-holder col-md-5">
+                        <div ng-repeat="doctor in doctorList = (homeVm.doctorsList | filter: homeVm.filterDoctor() | filter: homeVm.filterLocation()) track by $index"
+                             ng-show="homeVm.searchDoc.length > 0 || homeVm.searchLocation.length > 0 || homeVm.rating > 0">
+                            <a ng-click="homeVm.showDoctorDetails(doctor);">{{doctor.name}}, {{doctor.title}}</a>
+                        </div>
+                        <div ng-show="doctorList.length === 0">No results found</div>
+                    </div>
+                </div>
+            </div>
+            <div ng-if="!homeVm.showBrowse" class="show-details-wrapper">
+                <button class="btn btn-primary" ng-click="homeVm.showBrowse = true; homeVm.clearFilters()">Go back to Browse</button>
+                <div class="row">
+                    <div class="doctor-details col-md-6">
+                        <h1>Doctor Details</h1>
+                        <h3>{{homeVm.selectedDoctor.name}}</h3>
+                        <h5>{{homeVm.selectedDoctor.title}}</h5>
+                        <p>{{homeVm.selectedDoctor.area}}</p>
+                        <p>{{homeVm.selectedDoctor.rating}}</p>
+                    </div>
+                    <div class="col-md-6">
+                        <p ng-show="homeVm.similarDoctorsList.length > 0">You might be interested in</p>
+                        <div ng-repeat="doctor in homeVm.similarDoctorsList">
+                            <a ng-click="homeVm.showDoctorDetails(doctor);">{{doctor.name}}, {{doctor.title}}</a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-        <div></div>
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
-    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.3/angular.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.3/angular-route.min.js"></script>
 

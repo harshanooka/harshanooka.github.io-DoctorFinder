@@ -1,0 +1,19 @@
+.browse-home {
+    margin: 20% auto;
+}
+
+.results {
+    height: 150px;
+}
+
+.results-holder {
+    overflow: auto;
+}
+
+.clear-filters-btn {
+    margin-top: 24px;
+}
+
+.show-details-wrapper {
+    margin-top: 5%;
+}

@@ -2,18 +2,33 @@
   "doctors": [
     {
       "name": "Dr. David Watson",
+      "unique_id": 1,
       "area": "Detroit",
       "specialties": [
         "abdomen",
         "gas",
-        "stomach pain",
+        "stomach",
         "appendix"
       ],
       "rating": 4.1,
       "title": "Gastroenterologist"
     },
     {
+      "name": "Dr. Brian Edwards",
+      "unique_id": 6,
+      "area": "Detroit",
+      "specialties": [
+        "fever",
+        "allergy",
+        "stomach",
+        "cough"
+      ],
+      "rating": 3.5,
+      "title": "Physician"
+    },
+    {
       "name": "Dr. Whitney Cole",
+      "unique_id": 2,
       "area": "San Francisco",
       "specialties": [
         "pregnancy",
@@ -25,19 +40,44 @@
       "title": "Gynecologist/obstetrician"
     },
     {
-      "name": "Dr. Anthony Williams, MD",
+      "name": "Dr. Brandon Rodriguez",
+      "unique_id": 7,
+      "area": "San Francisco",
+      "specialties": [
+        "pregnancy",
+        "abortion",
+        "menstruation",
+        "periods",
+        "abdomen"
+      ],
+      "rating": 4.9,
+      "title": "Gynecologist"
+    },
+    {
+      "name": "Dr. Katie Williams, MD",
+      "unique_id": 3,
       "area": "Detroit",
       "specialties": [
-        "diarrohea",
-        "food poisoning",
-        "stomach pain",
-        "appendix"
+        "miscarriage",
+        "women"
       ],
       "rating": 4.0,
-      "title": "Gastroenterologist"
+      "title": "Gynecologist"
+    },
+    {
+      "name": "Dr. Cristiano Ronaldo, MD",
+      "unique_id": 8,
+      "area": "Detroit",
+      "specialties": [
+        "pregnancy",
+        "women"
+      ],
+      "rating": 4.3,
+      "title": "Gynecologist"
     },
     {
       "name": "Dr. Maurice Williams, MD",
+      "unique_id": 4,
       "area": "San Francisco",
       "specialties": [
         "miscarriage",
@@ -48,15 +88,31 @@
     },
     {
       "name": "Dr. Ashley Ambrose, MD",
-      "area": "Farmington Hills",
+      "unique_id": 5,
+      "area": "Detroit",
       "specialties": [
-        "knee",
-        "joints",
-        "leg",
-        "ligaments"
+        "diarrohea",
+        "motions",
+        "allergy",
+        "stomach",
+        "fever"
       ],
       "rating": 4.1,
-      "title": "Orthopedic Surgeon"
+      "title": "Gastroenterologist"
+    },
+    {
+      "name": "Dr. Kristina Terry, MD",
+      "unique_id": 9,
+      "area": "San Francisco",
+      "specialties": [
+        "diarrohea",
+        "motions",
+        "allergy",
+        "stomach",
+        "fever"
+      ],
+      "rating": 4.8,
+      "title": "Physician"
     }
   ]
 }
