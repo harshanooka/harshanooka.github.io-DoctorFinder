@@ -24,3 +24,8 @@ Test Data: Size of 9 doctors with 4 in San Francisco, 5 in Detroit.
 2) Currently included specialites: ["diarrohea","motions","allergy","stomach","fever", "cough", "gas", "appendix", "miscarriage", "pregnancy", "women", "abortion","menstruation","abdomen"]
 3) Currently included location: [San Francisco, Detroit]
 4) Currently available ratings:[3,5+,4+,4.5+]
+
+Code:
+1) index.html: Main html file
+2) app.js : Angular Module definition and other javascript functions used in the application
+3) style.css: CSS for the application
