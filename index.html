@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body ng-app="similarDoctorsApp">
+
+    <div ng-controller="homeController as homeVm">
+        <div class="browse-doctors">
+            <input type="text" placeholder="enter speciality, doctor name" ng-model="homeVm.searchDoc">
+            <input type="text" placeholder="enter location" ng-model="homeVm.searchLocation">
+            <select name="singleSelect" ng-model="homeVm.rating">
+                <option value="" ng-disabled=true>Rating</option>
+                <option value="threeandhalf">3.5+</option>
+                <option value="four">4+</option>
+                <option value="fourandhalf">4.5+</option>
+            </select>
+        </div>
+        <button ng-href="/doctors" ng-click="homeVm.clearFilters()">Clear All filters</button>
+        <div class="results">
+            <div ng-repeat="doctor in homeVm.doctorsList | filter: homeVm.filterDoctor()"
+                 ng-show="homeVm.searchDoc.length > 0 || homeVm.searchLocation.length > 0 || homeVm.rating.length > 0">
+                <a>{{doctor.name}}</a>
+            </div>
+        </div>
+        <div></div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.3/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.3/angular-route.min.js"></script>
+
+    <script src="app.js"></script>
+</body>
+</html>
