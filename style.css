@@ -17,3 +17,7 @@
 .show-details-wrapper {
     margin-top: 5%;
 }
+
+a:hover {
+    cursor: pointer;
+}
