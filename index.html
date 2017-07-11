@@ -14,14 +14,14 @@
                 <div class="browse-doctors row form-group">
                     <div class="col-md-5">
                         <label>Doctor Name, Speciality, Title</label>
-                        <input class="form-control" type="text" placeholder="enter speciality, doctor name" ng-model="homeVm.searchDoc">
+                        <input class="form-control" type="text" placeholder="enter doctor name, speciality, title" ng-model="homeVm.searchDoc">
                     </div>
                     <div class="col-md-3">
                         <label>Location</label>
                         <input class="form-control" type="text" placeholder="enter location" ng-model="homeVm.searchLocation">
                     </div>
-                    <div class="col-md-2">
-                        <label for="singleSelect">Sort by Rating</label>
+                    <div class="col-md-2" ng-show="homeVm.searchDoc || homeVm.searchLocation">
+                        <label for="singleSelect">Filter by Rating</label>
                         <select class="form-control" name="singleSelect" ng-model="homeVm.rating">
                             <option value=3.5>3.5+</option>
                             <option value=4>4+</option>
