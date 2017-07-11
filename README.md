@@ -16,7 +16,8 @@ Things that can be improved with time:
 1) Classification of user inputs such as speciality or titles to also include the doctors who are closely related to the search term.
 2) Include Google maps api into the application so that the location search can be prepopulated with city names and also get the current location of the user to calculate driving distance to the selected doctors location along with doctors hours, website, contact details and google ratings.
 3) Include more filters to sort/ filter data based on doctors price range, driving distance.
-
+4) The User experience of the application can be improved by allowing users to filter doctors based on their insurance carrier and also create their accounts and save their searches and search results
+5) The UI of the application can also be improved with Vibrant Colors to attract patients.
 
 Test Data: Size of 9 doctors with 4 in San Francisco, 5 in Detroit. 
 1) Currently included titles: [Gastroenterologist,Physician, obstetrician, Gynecologist]
