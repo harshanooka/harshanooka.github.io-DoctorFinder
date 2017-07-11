@@ -35,7 +35,7 @@
                 <div class="results row">
                     <div class="results-holder col-md-5">
                         <div ng-repeat="doctor in doctorList = (homeVm.doctorsList | filter: homeVm.filterDoctor() | filter: homeVm.filterLocation()) track by $index"
-                             ng-show="homeVm.searchDoc.length > 0 || homeVm.searchLocation.length > 0 || homeVm.rating > 0">
+                             ng-show="homeVm.searchDoc.length > 0 || homeVm.searchLocation.length > 0">
                             <a ng-click="homeVm.showDoctorDetails(doctor);">{{doctor.name}}, {{doctor.title}}</a>
                         </div>
                         <div ng-show="doctorList.length === 0">No results found</div>
